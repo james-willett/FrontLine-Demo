@@ -23,7 +23,7 @@ class RuntimeParameters extends Simulation {
     println(s"Total test duration: ${testDuration} seconds")
   }
 
-  val httpConf = http.baseUrl("http://localhost:8080/app/")
+  val httpConf = http.baseUrl("http://video-game-db.eu-west-2.elasticbeanstalk.com/app/")
     .header("Accept", "application/json")
 
   def getAllVideoGames() = {
