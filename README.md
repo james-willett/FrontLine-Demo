@@ -1,6 +1,6 @@
-Gatling 3 Fundamentals
+FrontLine-Demo
 =========================
 
-Course code for the Gatling Fundamentals Udemy course - updated for Gatling v3
+Repository used to run tests with Gatling FrontLine.
 
-https://www.udemy.com/gatling-fundamentals
+Runs tests against the Video Game DB - http://video-game-db.eu-west-2.elasticbeanstalk.com/swagger-ui/index.html
