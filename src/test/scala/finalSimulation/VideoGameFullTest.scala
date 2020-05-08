@@ -22,7 +22,7 @@ class VideoGameFullTest extends Simulation {
   def testDuration: Int = getProperty("DURATION", "60").toInt
 
   // other variables
-  var idNumbers = (20 to 1000).iterator
+  var idNumbers = (20 to 100000).iterator
   val rnd = new Random()
   val now = LocalDate.now()
   val pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd")
@@ -82,22 +82,15 @@ class VideoGameFullTest extends Simulation {
       .check(status.is(200)))
   }
 
-  def deleteLastPostedGame() = {
-    exec(http("Delete Last Posted Game")
-      .delete("videogames/${gameId}")
-      .check(status.is(200)))
-  }
-
   /*** Scenario Design ***/
   val scn = scenario("Video Game DB")
     .forever() {
       exec(getAllVideoGames())
-        .pause(2)
+        .pause(2 seconds)
         .exec(postNewGame())
-        .pause(2)
+        .pause(2 seconds)
         .exec(getLastPostedGame())
-        .pause(2)
-        .exec(deleteLastPostedGame())
+        .pause(2 seconds)
     }
 
   /*** Setup Load Simulation ***/
