@@ -86,11 +86,11 @@ class VideoGameFullTest extends Simulation {
   val scn = scenario("Video Game DB")
     .forever() {
       exec(getAllVideoGames())
-        .pause(2 seconds)
+        .pause(5 seconds)
         .exec(postNewGame())
-        .pause(2 seconds)
+        .pause(5 seconds)
         .exec(getLastPostedGame())
-        .pause(2 seconds)
+        .pause(5 seconds)
     }
 
   /*** Setup Load Simulation ***/
